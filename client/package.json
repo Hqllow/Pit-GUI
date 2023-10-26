@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "overrides": {
     "autoprefixer": "10.4.5"
   },
@@ -31,10 +32,10 @@
     "typescript": "^4.7.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "dev": "vite serve",
+    "build": "vite build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "preview": "vite preview",
     "format": "prettier --write ./"
   },
   "proxy": "https://telemetry-api.ufsolargators.org",
@@ -53,6 +54,9 @@
   "devDependencies": {
     "@types/node": "^18.0.0",
     "@types/sequelize": "^4.28.17",
-    "axios": "^1.5.1"
+    "@vitejs/plugin-react": "^4.1.0",
+    "axios": "^1.5.1",
+    "vite": "^4.5.0",
+    "vite-plugin-html": "^3.2.0"
   }
 }
