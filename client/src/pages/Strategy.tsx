@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
   ReferenceLine,
 } from "recharts";
-import { Row, Col, Form, Button } from "react-bootstrap";
+import { Row, Col, Form, Button, Spinner } from "react-bootstrap";
 import { getAllModuleItem, WHEEL_RADIUS_MI } from "../shared/sdk/telemetry";
 import { bmsShape } from "../component/BMS";
 import { mitsubaShape } from "../component/Mitsuba";
@@ -530,7 +530,17 @@ function Strategy() {
                 fetchData();
               }}
             >
-              Go
+              {isPressed ? (
+                <Spinner
+                  as="span"
+                  animation="border"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+              ) : (
+                <p>Go</p>
+              )}
             </Button>
           )}
         </Col>
